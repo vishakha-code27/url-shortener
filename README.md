@@ -74,6 +74,14 @@ pip install -r requirements.txt
 python app.py
 ```
 
+## Live Demo
+
+Frontend:
+https://url-shortener-gamma-puce.vercel.app
+
+Backend:
+https://url-shortener-backend-omgk.onrender.com
+
 ---
 
 ## Screenshots
