@@ -1,10 +1,22 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f5f9;
+}
+
 .container {
-  width: 450px;
-  margin: 100px auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
   background: white;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 400px;
+  padding: 35px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   text-align: center;
 }
 
@@ -12,31 +24,54 @@ h1 {
   margin-bottom: 10px;
 }
 
-p {
+.subtitle {
+  color: #666;
   margin-bottom: 20px;
-  color: #555;
 }
 
 input {
-  width: 100%;
+  width: 90%;
   padding: 12px;
-  margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 button {
-  width: 100%;
-  padding: 12px;
-  background: #2563eb;
-  color: white;
+  margin-top: 15px;
+  padding: 12px 20px;
   border: none;
   border-radius: 8px;
-  font-size: 16px;
+  background: #007bff;
+  color: white;
   cursor: pointer;
+  font-size: 15px;
 }
 
 button:hover {
-  background: #1d4ed8;
+  opacity: 0.9;
+}
+
+.result {
+  margin-top: 25px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 10px;
+}
+
+.short-link {
+  word-break: break-all;
+  color: #007bff;
+}
+
+.clicks {
+  font-weight: bold;
+}
+
+.copy-btn {
+  background: #007bff;
+}
+
+.copied {
+  background: green;
 }
