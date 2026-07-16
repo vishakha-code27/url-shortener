@@ -58,8 +58,10 @@ def shorten_url():
     )
     conn.commit()
 
+    short_url = f"https://url-shortener-backend-omgk.onrender.com/{short_code}"
+
     return jsonify({
-    "short_url": f"http://localhost:5000/{short_code}",
+    "short_url": short_url,
     "clicks": 0
 })
 @app.route("/<code>")
