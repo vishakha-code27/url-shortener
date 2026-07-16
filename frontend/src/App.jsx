@@ -7,11 +7,30 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [clicks, setClicks] = useState(0);
 
+useEffect(() => {
+  if (!shortUrl) return;
+
+  const code = shortUrl.split("/").pop();
+
+  const interval = setInterval(async () => {
+    const response = await fetch(
+      `https://url-shortener-backend-omgk.onrender.com/clicks/${code}`
+    );
+
+    const data = await response.json();
+
+    setClicks(data.clicks);
+  }, 2000);
+
+  return () => clearInterval(interval);
+
+}, [shortUrl]);
+
   const handleShorten = async () => {
   setLoading(true);
 
   try {
-    const response = await fetch("http://127.0.0.1:5000/shorten", {
+    const response = await fetch("https://url-shortener-backend-omgk.onrender.com/shorten", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -29,6 +48,15 @@ function App() {
 
     setShortUrl(data.short_url);
     setClicks(data.clicks ?? 0);
+    const code = data.short_url.split("/").pop();
+
+const clickResponse = await fetch(
+  `https://url-shortener-backend-omgk.onrender.com/clicks/${code}`
+);
+
+const clickData = await clickResponse.json();
+
+setClicks(clickData.clicks);
 
   } catch (error) {
     alert("Backend server is not running");
