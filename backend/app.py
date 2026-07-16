@@ -48,7 +48,7 @@ def shorten_url():
 
     if existing:
      return jsonify({
-        "short_url": f"http://localhost:5000/{existing[0]}"
+        "short_url": f"https://url-shortener-backend-omgk.onrender.com/{existing[0]}"
     })
     short_code = generate_code()
 
@@ -81,8 +81,8 @@ def redirect_url(code):
     conn.commit()
 
     return redirect(result[0])
+
     return jsonify({"error": "URL not found"}), 404
-    
 @app.route("/clicks/<code>")
 def get_clicks(code):
     cursor.execute(
