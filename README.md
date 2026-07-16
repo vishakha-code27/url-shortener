@@ -78,15 +78,27 @@ python app.py
 
 ## Screenshots
 
-Add screenshots here after uploading them.
+### Home Page
 
-Example:
+![Home Page](screenshots/home.png)
 
-- Home Page
-- Short URL Generated
-- Click Counter
-- Copy URL Button
-ok
+---
+
+### Short URL Generated
+
+![Short URL](screenshots/short-url.png)
+
+---
+
+### Copy URL
+
+![Copy URL](screenshots/copied.png)
+
+---
+
+### Click Counter
+
+![Click Counter](screenshots/click-counter.png)
 ---
 
 ## Author
